@@ -1,0 +1,39 @@
+<h1>Add Doctors</h1>
+
+<p>
+  Doctor Name : 
+  <input [(ngModel)]="doc_name">
+</p>
+<br/>
+<p>
+  Doctor Specialization : 
+  <input [(ngModel)]="doc_specialize">
+</p>
+<p>
+  <button *ngIf="btn_strt" class="btn btn-primary" (click)="adddoc()">Add Doctor</button>
+  <button *ngIf="!btn_strt" class="btn btn-primary" (click)="updtdoc()">Update Doctor</button>
+</p>
+
+<h1>Show Data</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Doctor Name</th>
+      <th scope="col">Doctor Specialization</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let x of doctor; let i = index">
+     <td>{{x.name}}</td>
+     <td>{{x.dept}}</td>
+     <td>
+       <button class="btn btn-primary" (click)="docdelete(i)">Delete</button>
+     </td>
+     <td>
+      <button class="btn btn-primary" (click)="docedit(x)">Edit</button>
+    </td>
+    </tr>
+    
+  </tbody>
+</table>

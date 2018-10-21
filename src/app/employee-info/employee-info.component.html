@@ -1,0 +1,46 @@
+<h1>Employpee Info using CRUD Operations and Firebase</h1>
+<h2>Add Employee</h2>
+<p>
+  Employpee Name : 
+  <input [(ngModel)]="emp.name">
+</p>
+<p>
+  Employee Department : 
+  <input [(ngModel)]="emp.dept">
+</p>
+<p>
+  Employee Salary : 
+  <input [(ngModel)]="emp.sal">
+</p>
+<p>
+  <button *ngIf="btn_strt" class="btn btn-primary" (click)="addemp()">Save</button>
+</p>
+<p>
+  <button *ngIf="!btn_strt" class="btn btn-primary" (click)="updtemp()">Update</button>
+</p>
+
+<h2>Show Employees</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Employee Name</th>
+      <th scope="col">Employee Department</th>
+      <th scope="col">Employee Salary</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let x of emps">
+     <td>{{x.data.name}}</td>
+     <td>{{x.data.dept}}</td>
+     <td>{{x.data.sal}}</td>
+     <td>
+       <button class="btn btn-primary" (click)="empdelete(x.id)">Delete</button>
+     </td>
+     <td>
+      <button class="btn btn-primary" (click)="empedit(x)">Edit</button>
+    </td>
+    </tr>
+    
+  </tbody>
+</table>

@@ -1,0 +1,10 @@
+<h1>Addition</h1>
+
+<p>First Number : <input [(ngModel)]="a"></p><br/>
+<p>Second Number : <input [(ngModel)]="b"></p><br/>
+<!-- <p>First Number : <input [value]="a"></p><br/>
+<p>Second Number : <input [value]="b"></p><br/> -->
+<p>
+  <button class="btn btn-primary" (click)="addition()">Add</button>
+</p>
+<p *ngIf="c">The sum of a + b is {{this.c}}</p> 
